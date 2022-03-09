@@ -16,7 +16,6 @@ export function Message({avatar, message, name, time}: MessageProps) {
                 <div className="message">{message}</div>
                 <div className="time">{time}</div>
             </div>
-
         </div>
     )
 }
