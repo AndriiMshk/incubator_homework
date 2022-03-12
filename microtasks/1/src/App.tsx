@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
-import {New} from "./new/new";
+import {Header} from "./site/header";
+import {Footer} from "./site/footer";
+import {Body} from "./site/body";
 
 function App() {
-    return (
-        <>
-            <h1>0 (without props)</h1>
-            <New name={'1 '}/>
-        </>
-    )
+  return (
+    <div className="App">
+      <Header title='HEADER'/>
+      <Body title='BODY'/>
+      <Footer title='FOOTER'/>
+    </div>
+  );
 }
 
 export default App;
