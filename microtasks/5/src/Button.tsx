@@ -1,5 +1,6 @@
 import React from 'react';
 import {ValutaType} from './App'
+
 type MoneyType = {
     banknots: string,
     value: number,
