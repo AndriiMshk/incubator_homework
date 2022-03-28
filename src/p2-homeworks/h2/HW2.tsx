@@ -17,47 +17,34 @@ const defaultAffairs: AffairType[] = [
     {_id: 5, name: 'html & css', priority: 'middle'},
 ]
 
-// export const filterAffairss = (affairs: AffairType[], filter: FilterType): AffairType[] | [] => {
+// export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] | [] => {
 //     if (filter === 'all') return affairs
 //     else if (filter === 'high') return affairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === 'high')
 //     else if (filter === 'middle') return affairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === 'middle')
 //     else if (filter === 'low') return affairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === 'low')
 //     return []
 // }
-//
-export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] | [] =>
-    filter === 'all'
-        ? affairs
-        : affairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === filter) || []
 
 // export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] | [] =>
 //     filter === 'all' && affairs
 //     || affairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === filter)
 //     || []
 
-// =====
-// const newFilterTypes = {
-//     all: defaultAffairs,
-//     high: defaultAffairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === 'high'),
-//     middle: defaultAffairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === 'middle'),
-//     low: defaultAffairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === 'low')
-// }
-//
-// const newFilter = (filter: FilterType) => newFilterTypes[filter] || []
-// ====
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] | [] =>
+    filter === 'all'
+        ? affairs
+        : affairs.filter((filteredAffairs: AffairType) => filteredAffairs.priority === filter) || []
 
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] | [] => {
     return affairs.filter((filteredAffairs: AffairType) => filteredAffairs._id !== _id)
 }
 
 function HW2() {
+
     const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs)
     const [filter, setFilter] = useState<FilterType>('all')
-
     const filteredAffairs = filterAffairs(affairs, filter)
-    // const filteredAffairs = newFilter(filter)
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id))
-
     return (
         <div>
             <hr/>
