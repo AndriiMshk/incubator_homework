@@ -8,11 +8,11 @@ import { BrowserRouter } from 'react-router-dom';
 // igg2
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <BrowserRouter>
+      <App />,
+  //   </BrowserRouter>
+  // </React.StrictMode>,
   document.getElementById('root'),
 );
 
