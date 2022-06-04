@@ -36,11 +36,11 @@ function Clock() {
         {date ? stringTime : 'Time'}
       </div>
 
-      {show && (
+      {show ? (
         <div>
           {date ? stringDate : 'Date'}
         </div>
-      )}
+      ) : <br />}
 
       <SuperButton onClick={start}>start</SuperButton>
       <SuperButton onClick={stop}>stop</SuperButton>
