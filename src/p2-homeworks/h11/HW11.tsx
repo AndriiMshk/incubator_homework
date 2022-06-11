@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import SuperRange from './common/c7-SuperRange/SuperRange';
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange';
-import MinimumDistanceSlider from './test';
 
 function HW11() {
-  const [value, setValue] = useState< number[]>([0, 100]);
+  const [value, setValue] = useState<number[]>([0, 100]);
 
   return (
     <div>
@@ -17,13 +16,12 @@ function HW11() {
         />
       </div>
       <div>
-        <span>{value}</span>
+        <span>{value[0]} - {value[1]}</span>
         <SuperDoubleRange
           value={value}
           onChangeRange={setValue}
         />
       </div>
-      <MinimumDistanceSlider/>
     </div>
   );
 }
