@@ -1,39 +1,31 @@
-import React, {useState} from 'react'
-import SuperRange from './common/c7-SuperRange/SuperRange'
-import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import React, { useState } from 'react';
+import SuperRange from './common/c7-SuperRange/SuperRange';
+import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange';
+import MinimumDistanceSlider from './test';
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+  const [value, setValue] = useState< number[]>([0, 100]);
 
-    return (
-        <div>
-            <hr/>
-            homeworks 11
-
-            {/*should work (должно работать)*/}
-            <div>
-                <span>{value1}</span>
-                <SuperRange
-                    // сделать так чтоб value1 изменялось
-                />
-            </div>
-
-            <div>
-                <span>{value1}</span>
-                <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
-                />
-                <span>{value2}</span>
-            </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperRange/>*/}
-            {/*<AlternativeSuperDoubleRange/>*/}
-            <hr/>
-        </div>
-    )
+  return (
+    <div>
+      <hr />
+      homeworks 11
+      <div>
+        <SuperRange
+          value={value}
+          onChangeRange={setValue}
+        />
+      </div>
+      <div>
+        <span>{value}</span>
+        <SuperDoubleRange
+          value={value}
+          onChangeRange={setValue}
+        />
+      </div>
+      <MinimumDistanceSlider/>
+    </div>
+  );
 }
 
-export default HW11
+export default HW11;
