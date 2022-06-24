@@ -15,6 +15,7 @@ import store from '../../../p2-homeworks/h10/bll/store';
 import HW11 from '../../../p2-homeworks/h11/HW11';
 import HW12 from '../../../p2-homeworks/h12/HW12';
 import { themeStore } from '../../../p2-homeworks/h12/bll/store';
+import HW13 from '../../../p2-homeworks/h13/HW13';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Provider store={store}><HW10 /></Provider>
       <HW11 />
       <Provider store={themeStore}><HW12 /></Provider>
+      <HW13/>
     </div>
   );
 }
